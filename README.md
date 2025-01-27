@@ -124,7 +124,9 @@ Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce projet, 
 5. Ouvrez une Pull Request.
 
 ## Licence
+
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
 
 ## Auteur
+
 - Sékou Dayifourou KEITA - [Dayifour](https://github.com/dayifour)

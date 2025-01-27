@@ -1,115 +1,115 @@
-# Apprendre à utiliser et contribuer au projet
+# Learn to Use and Contribute to the Project
 
-Ce guide vous aidera à comprendre comment utiliser, contribuer et approfondir vos connaissances sur le projet **YouTube Video Downloader**.
-
----
-
-## 1. Comprendre le projet
-
-### Objectif du projet
-
-Ce projet permet de télécharger des vidéos YouTube en spécifiant l'URL de la vidéo et la qualité souhaitée. Il utilise **Next.js** pour l'interface utilisateur et **yt-dlp** pour récupérer les liens de téléchargement.
-
-### Technologies utilisées
-
-- **Next.js** : Framework React pour le rendu côté serveur et la génération de sites statiques.
-- **yt-dlp** : Outil en ligne de commande pour télécharger des vidéos YouTube.
-- **Node.js** : Environnement d'exécution pour le backend.
-- **Tailwind CSS** (optionnel) : Framework CSS pour styliser l'interface utilisateur.
+This guide will help you understand how to use, contribute, and deepen your knowledge of the **YouTube Video Downloader** project.
 
 ---
 
-## 2. Utiliser le projet
+## 1. Understand the Project
 
-### Installation locale
+### Project Objective
 
-Suivez les étapes du [README.md](README.md) pour installer et exécuter le projet sur votre machine.
+This project allows you to download YouTube videos by specifying the video URL and the desired quality. It uses **Next.js** for the user interface and **yt-dlp** to fetch download links.
 
-### Fonctionnalités principales
+### Technologies Used
 
-- Téléchargement de vidéos YouTube en différentes qualités (144p, 360p, 720p, 1080p).
-- Interface utilisateur simple et intuitive.
-- Téléchargement automatique après soumission du formulaire.
-
----
-
-## 3. Contribuer au projet
-
-### Comment contribuer ?
-
-Les contributions sont les bienvenues ! Voici comment vous pouvez aider :
-
-1. **Signaler un problème** : Si vous trouvez un bug, ouvrez une [issue](https://github.com/Dayifour/video_downloader/issues) sur GitHub.
-2. **Proposer une amélioration** : Si vous avez une idée pour améliorer le projet, ouvrez une issue ou soumettez une pull request.
-3. **Contribuer au code** : Suivez les étapes ci-dessous pour contribuer au code.
-
-### Étapes pour contribuer au code
-
-1. Forkez le dépôt.
-2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`).
-3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`).
-4. Pushez la branche (`git push origin feature/AmazingFeature`).
-5. Ouvrez une Pull Request.
-
-### Bonnes pratiques
-
-- Écrivez du code propre et bien documenté.
-- Respectez les conventions de nommage et de style du projet.
-- Testez vos modifications avant de soumettre une pull request.
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **yt-dlp**: Command-line tool for downloading YouTube videos.
+- **Node.js**: Runtime environment for the backend.
+- **Tailwind CSS** (optional): CSS framework for styling the user interface.
 
 ---
 
-## 4. Approfondir ses connaissances
+## 2. Use the Project
 
-### Ressources pour apprendre Next.js
+### Local Installation
 
-- [Documentation officielle de Next.js](https://nextjs.org/docs)
-- [Tutoriel Next.js pour débutants](https://nextjs.org/learn)
-- [Exemples de projets Next.js](https://github.com/vercel/next.js/tree/canary/examples)
+Follow the steps in the [README.md](README.md) to install and run the project on your machine.
 
-### Ressources pour apprendre yt-dlp
+### Main Features
 
-- [Documentation officielle de yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- [Guide d'utilisation de yt-dlp](https://github.com/yt-dlp/yt-dlp#usage)
-
-### Ressources pour apprendre Node.js
-
-- [Documentation officielle de Node.js](https://nodejs.org/en/docs/)
-- [Tutoriel Node.js pour débutants](https://nodejs.dev/learn)
+- Download YouTube videos in various qualities (144p, 360p, 720p, 1080p).
+- Simple and intuitive user interface.
+- Automatic download after form submission.
 
 ---
 
-## 5. Questions fréquentes (FAQ)
+## 3. Contribute to the Project
 
-### Q1 : Pourquoi mon téléchargement ne fonctionne pas ?
+### How to Contribute?
 
-- Vérifiez que l'URL de la vidéo est correcte.
-- Assurez-vous que `yt-dlp` est correctement installé et configuré sur le serveur.
-- Consultez les logs du serveur pour identifier d'éventuelles erreurs.
+Contributions are welcome! Here’s how you can help:
 
-### Q2 : Comment ajouter une nouvelle qualité de téléchargement ?
+1. **Report an Issue**: If you find a bug, open an [issue](https://github.com/Dayifour/video_downloader/issues) on GitHub.
+2. **Suggest an Improvement**: If you have an idea to improve the project, open an issue or submit a pull request.
+3. **Contribute Code**: Follow the steps below to contribute code.
 
-- Modifiez le fichier `index.js` dans le dossier `pages` pour ajouter une nouvelle option dans le menu déroulant des qualités.
-- Assurez-vous que la qualité est prise en charge par `yt-dlp`.
+### Steps to Contribute Code
 
-### Q3 : Comment déployer le projet sur un serveur ?
+1. Fork the repository.
+2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
 
-- Suivez les étapes décrites dans le [README.md](README.md) pour déployer le projet sur un serveur.
+### Best Practices
+
+- Write clean and well-documented code.
+- Follow the project's naming and style conventions.
+- Test your changes before submitting a pull request.
 
 ---
 
-## 6. Remerciements
+## 4. Deepen Your Knowledge
 
-- Merci à [yt-dlp](https://github.com/yt-dlp/yt-dlp) pour l'outil de téléchargement de vidéos.
-- Merci à [Next.js](https://nextjs.org/) pour le framework React.
-- Merci à tous les contributeurs qui aident à améliorer ce projet !
+### Resources to Learn Next.js
+
+- [Official Next.js Documentation](https://nextjs.org/docs)
+- [Next.js Beginner Tutorial](https://nextjs.org/learn)
+- [Next.js Project Examples](https://github.com/vercel/next.js/tree/canary/examples)
+
+### Resources to Learn yt-dlp
+
+- [Official yt-dlp Documentation](https://github.com/yt-dlp/yt-dlp)
+- [yt-dlp Usage Guide](https://github.com/yt-dlp/yt-dlp#usage)
+
+### Resources to Learn Node.js
+
+- [Official Node.js Documentation](https://nodejs.org/en/docs/)
+- [Node.js Beginner Tutorial](https://nodejs.dev/learn)
+
+---
+
+## 5. Frequently Asked Questions (FAQ)
+
+### Q1: Why is my download not working?
+
+- Check that the video URL is correct.
+- Ensure that `yt-dlp` is properly installed and configured on the server.
+- Review the server logs to identify potential errors.
+
+### Q2: How to add a new download quality?
+
+- Modify the `index.js` file in the `pages` folder to add a new option in the quality dropdown menu.
+- Ensure the quality is supported by `yt-dlp`.
+
+### Q3: How to deploy the project on a server?
+
+- Follow the steps described in the [README.md](README.md) to deploy the project on a server.
+
+---
+
+## 6. Acknowledgments
+
+- Thanks to [yt-dlp](https://github.com/yt-dlp/yt-dlp) for the video download tool.
+- Thanks to [Next.js](https://nextjs.org/) for the React framework.
+- Thanks to all contributors who help improve this project!
 
 ---
 
 ## 7. Contact
 
-Si vous avez des questions ou des suggestions, n'hésitez pas à me contacter :
+If you have any questions or suggestions, feel free to contact me:
 
-- **Nom** : Sékou Dayifourou KEITA
-- **Email** : votre-email@example.com
-- **GitHub** : [Dayifour](https://github.com/dayifour)
+- **Name**: Sékou Dayifourou KEITA
+- **Email**: your-email@example.com
+- **GitHub**: [Dayifour](https://github.com/dayifour)

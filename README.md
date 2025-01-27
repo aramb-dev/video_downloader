@@ -1,30 +1,24 @@
-Je veux que vous formater tout le text que vais vous donner en markdown: # YouTube Video Downloader
+YouTube Video Downloader
+Ce projet est une application web développée avec Next.js qui permet de télécharger des vidéos YouTube en spécifiant l'URL de la vidéo et la qualité souhaitée. L'application utilise yt-dlp pour récupérer les liens de téléchargement et les sert au client pour un téléchargement automatique.
 
-Ce projet est une application web développée avec **Next.js** qui permet de télécharger des vidéos YouTube en spécifiant l'URL de la vidéo et la qualité souhaitée. L'application utilise yt-dlp pour récupérer les liens de téléchargement et les sert au client pour un téléchargement automatique.
+Fonctionnalités
+Téléchargement de vidéos YouTube en différentes qualités (144p, 360p, 720p, 1080p).
 
----
+Interface utilisateur simple et intuitive.
 
-## Fonctionnalités
+Téléchargement automatique après soumission du formulaire.
 
-- Téléchargement de vidéos YouTube en différentes qualités (144p, 360p, 720p, 1080p).
-- Interface utilisateur simple et intuitive.
-- Téléchargement automatique après soumission du formulaire.
-
----
-
-## Prérequis
-
+Prérequis
 Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-- [Node.js](https://nodejs.org/) (version 16 ou supérieure)
-- [Git](https://git-scm.com/)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) (pour récupérer les liens de téléchargement)
+Node.js (version 16 ou supérieure)
 
----
+Git
 
-## Installation
+yt-dlp (pour récupérer les liens de téléchargement)
 
-1. **Cloner le dépôt**
+Installation
+Cloner le dépôt
 
 bash
 git clone https://github.com/votre-utilisateur/votre-repo.git
@@ -34,7 +28,6 @@ Installer les dépendances
 Utilisez npm ou yarn pour installer les dépendances du projet.
 
 bash
-Copy
 npm install
 
 # ou
@@ -45,16 +38,14 @@ Installer yt-dlp
 Assurez-vous que yt-dlp est installé sur votre système. Vous pouvez l'installer via pip ou télécharger le binaire directement.
 
 bash
-Copy
 pip install yt-dlp
-Ou téléchargez-le depuis yt-dlp GitHub.
+Ou téléchargez-le depuis le GitHub de yt-dlp.
 
 Configurer l'environnement
 
 Créez un fichier .env à la racine du projet pour configurer les variables d'environnement si nécessaire.
 
 bash
-Copy
 touch .env
 Pour l'instant, aucune variable d'environnement n'est requise, mais vous pouvez en ajouter si vous en avez besoin plus tard.
 
@@ -64,7 +55,6 @@ Démarrer le serveur de développement
 Pour lancer l'application en mode développement, exécutez la commande suivante :
 
 bash
-Copy
 npm run dev
 
 # ou
@@ -87,7 +77,7 @@ Structure du projet
 
 index.js : Page d'accueil avec le formulaire de téléchargement.
 
-api : Dossier contenant l'API pour gérer les requêtes de téléchargement.
+/api : Dossier contenant l'API pour gérer les requêtes de téléchargement.
 
 /public : Contient les fichiers statiques (images, styles, etc.).
 
@@ -107,12 +97,18 @@ Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce projet, 
 
 Forkez le projet.
 
-Créez une branche pour votre fonctionnalité (git checkout -b feature/AmazingFeature).
+Créez une branche pour votre fonctionnalité :
 
-Committez vos changements (git commit -m 'Add some AmazingFeature').
+bash
+git checkout -b feature/AmazingFeature
+Committez vos changements :
 
-Pushez la branche (git push origin feature/AmazingFeature).
+bash
+git commit -m 'Add some AmazingFeature'
+Pushez la branche :
 
+bash
+git push origin feature/AmazingFeature
 Ouvrez une Pull Request.
 
 Licence
@@ -124,29 +120,26 @@ Votre Nom - Votre GitHub
 Remerciements
 yt-dlp pour l'outil de téléchargement de vidéos.
 
-Next.js pour le framework React.
+Next.jspour le framework React.
 
-Copy
+Comment utiliser ce fichier
+Copiez tout le contenu ci-dessus.
 
----
+Collez-le dans un fichier nommé README.md à la racine de votre projet.
 
-### Comment utiliser ce fichier
+Personnalisez les sections suivantes :
 
-1. Copiez tout le contenu ci-dessus.
-2. Collez-le dans un fichier nommé `README.md` à la racine de votre projet.
-3. Personnalisez les sections suivantes :
+Remplacez votre-utilisateur et votre-repo par votre nom d'utilisateur GitHub et le nom de votre dépôt.
 
-   - Remplacez `votre-utilisateur` et `votre-repo` par votre nom d'utilisateur GitHub et le nom de votre dépôt.
-   - Modifiez la section **Auteur** avec vos informations.
-   - Ajoutez ou supprimez des sections en fonction des besoins de votre projet.
+Modifiez la section Auteur avec vos informations.
 
-4. Ajoutez ce fichier à votre dépôt Git et poussez-le sur GitHub.
+Ajoutez ou supprimez des sections en fonction des besoins de votre projet.
 
----
+Ajoutez ce fichier à votre dépôt Git et poussez-le sur GitHub.
 
-### Exemple de personnalisation
+Exemple de personnalisation
+Si votre projet s'appelle YouTube Downloader et que votre nom d'utilisateur GitHub est john-doe, vous pouvez personnaliser le fichier comme suit :
 
-Si votre projet s'appelle **YouTube Downloader** et que votre nom d'utilisateur GitHub est **john-doe**, vous pouvez personnaliser le fichier comme suit :
 markdown
 
 # YouTube Downloader

@@ -36,14 +36,13 @@ cd votre-repo
 
    Utilisez `npm` ou `yarn` pour installer les dépendances du projet.
 
-````bash
+```bash
 npm install
 
 # ou
 
-```bash
 yarn install
-````
+```
 
 3. **Installer yt-dlp**
    Assurez-vous que `yt-dlp` est installé sur votre système. Vous pouvez l'installer via pip ou télécharger le binaire directement.
@@ -101,3 +100,31 @@ Le téléchargement commencera automatiquement après la soumission du formulair
 - `/styles` : Contient les fichiers CSS ou Tailwind (si utilisé).
 
 - `package.json` : Liste des dépendances et scripts du projet.
+
+## Dépendances
+
+`Next.js` : Framework React pour le rendu côté serveur et la génération de sites statiques.
+
+`yt-dlp` : Outil en ligne de commande pour télécharger des vidéos YouTube.
+
+`Tailwind CSS` (optionnel) : Framework CSS pour styliser l'interface utilisateur.
+
+## Contribution
+
+Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce projet, suivez les étapes suivantes :
+
+1. Forkez le projet.
+
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`).
+
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`).
+
+4. Pushez la branche (`git push origin feature/AmazingFeature`).
+
+5. Ouvrez une Pull Request.
+
+## Licence
+Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+
+## Auteur
+- Sékou Dayifourou KEITA - [Dayifour](https://github.com/dayifour)

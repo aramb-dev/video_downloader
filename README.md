@@ -1,132 +1,132 @@
 # YouTube Video Downloader
 
-Ce projet est une application web développée avec **Next.js** qui permet de télécharger des vidéos YouTube en spécifiant l'URL de la vidéo et la qualité souhaitée. L'application utilise `yt-dlp` pour récupérer les liens de téléchargement et les sert au client pour un téléchargement automatique.
+This project is a web application developed with **Next.js** that allows to download YouTube videos by specifying the video URL and the desired quality. The application uses `yt-dlp` to retrieve the download links and serves them to the client for automatic downloading.
 
 ---
 
-## Fonctionnalités
+## Features
 
-- Téléchargement de vidéos YouTube en différentes qualités (144p, 360p, 720p, 1080p).
-- Interface utilisateur simple et intuitive.
-- Téléchargement automatique après soumission du formulaire.
+- Download YouTube videos in different qualities (144p, 360p, 720p, 1080p).
+- Simple and intuitive user interface.
+- Automatic download after form submission.
 
 ---
 
-## Prérequis
+## Prerequisites
 
-Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+Before you begin, make sure you have the following installed on your machine:
 
-- [Node.js](https://nodejs.org/) (version 16 ou supérieure)
+- [Node.js](https://nodejs.org/) (version 16 or higher)
 - [Git](https://git-scm.com/)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) (pour récupérer les liens de téléchargement)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) (to get the download links)
 
 ---
 
 ## Installation
 
-1. **Cloner le dépôt**
+1. **Clone the repository**
 
 ```bash
-git clone https://github.com/votre-utilisateur/votre-repo.git
-cd votre-repo
+git clone https://github.com/your-user/your-repo.git
+cd your-repo
 
 ```
 
-2. **Installer les dépendances**
+2. **Install dependencies**
 
-   Utilisez `npm` ou `yarn` pour installer les dépendances du projet.
+Use `npm` or `yarn` to install the project's dependencies.
 
 ```bash
 npm install
 
-# ou
+# or
 
 yarn install
 ```
 
-3. **Installer yt-dlp**
-   Assurez-vous que `yt-dlp` est installé sur votre système. Vous pouvez l'installer via pip ou télécharger le binaire directement.
+3. **Install yt-dlp**
+   Make sure you have `yt-dlp` installed on your system. You can install it via pip or download the binary directly.
 
 ```bash
 pip install yt-dlp
 ```
 
-Ou téléchargez-le depuis [yt-dlp GitHub](https://github.com/yt-dlp/yt-dlp).
+Or download it from [yt-dlp GitHub](https://github.com/yt-dlp/yt-dlp).
 
-4. **Configurer l'environnement**
-   Créez un fichier `.env` à la racine du projet pour configurer les variables d'environnement si nécessaire.
+4. **Set up the environment**
+   Create a `.env` file in the root of the project to set up environment variables if needed.
 
 ```bash
 touch .env
 ```
 
-Pour l'instant, aucune variable d'environnement n'est requise, mais vous pouvez en ajouter si vous en avez besoin plus tard.
+No environment variables are required at this time, but you can add them if you need them later.
 
 ---
 
-## Utilisation
+## Usage
 
-1. **Démarrer le serveur de développement**
-   Pour lancer l'application en mode développement, exécutez la commande suivante :
+1. **Start the development server**
+   To launch the application in development mode, run the following command:
 
 ```bash
 npm run dev
-# ou
+# or
 yarn dev
 ```
 
-L'application sera accessible à l'adresse : [http://localhost:3000](http://localhost:3000).
+The application will be accessible at the address: [http://localhost:3000](http://localhost:3000).
 
-2. **Utiliser l'application**
+2. **Use the application**
 
-- Entrez l'URL de la vidéo YouTube dans le champ prévu.
+- Enter the URL of the YouTube video in the field provided.
 
-- Sélectionnez la qualité souhaitée.
+- Select the desired quality.
 
-- Cliquez sur Download pour lancer le téléchargement.
+- Click on Download to start the download.
 
-Le téléchargement commencera automatiquement après la soumission du formulaire.
+The download will start automatically after submitting the form.
 
-## Structure du projet
+## Project structure
 
-- `/pages` : Contient les pages Next.js.
+- `/pages`: Contains the Next.js pages.
 
-  - `index.js` : Page d'accueil avec le formulaire de téléchargement.
+- `index.js`: Home page with the download form.
 
-  - `api` : Dossier contenant l'API pour gérer les requêtes de téléchargement.
+- `api`: Folder containing the API to manage download requests.
 
-- `/public` : Contient les fichiers statiques (images, styles, etc.).
+- `/public` : Contains static files (images, styles, etc.).
 
-- `/styles` : Contient les fichiers CSS ou Tailwind (si utilisé).
+- `/styles` : Contains CSS or Tailwind files (if used).
 
-- `package.json` : Liste des dépendances et scripts du projet.
+- `package.json` : List of project dependencies and scripts.
 
-## Dépendances
+## Dependencies
 
-`Next.js` : Framework React pour le rendu côté serveur et la génération de sites statiques.
+`Next.js` : React framework for server-side rendering and static site generation.
 
-`yt-dlp` : Outil en ligne de commande pour télécharger des vidéos YouTube.
+`yt-dlp` : Command-line tool to download YouTube videos.
 
-`Tailwind CSS` (optionnel) : Framework CSS pour styliser l'interface utilisateur.
+`Tailwind CSS` (optional): CSS framework to style the user interface.
 
-## Contribution
+## Contribute
 
-Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce projet, suivez les étapes suivantes :
+Contributions are welcome! If you want to improve this project, follow these steps:
 
-1. Forkez le projet.
+1. Fork the project.
 
-2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`).
+2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`).
 
-3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
 
-4. Pushez la branche (`git push origin feature/AmazingFeature`).
+4. Push the branch (`git push origin feature/AmazingFeature`).
 
-5. Ouvrez une Pull Request.
+5. Open a Pull Request.
 
-## Licence
+## License
 
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## Auteur
+## Author
 
 - Sékou Dayifourou KEITA - [Dayifour](https://github.com/dayifour)

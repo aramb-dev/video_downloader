@@ -2,59 +2,107 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [url, setUrl] = useState("");
-  const [quality, setQuality] = useState("highest");
-  const [loading, setLoading] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
+  const [quality, setQuality] = useState("360p");
+  const [downloadLink, setDownloadLink] = useState("");
+  const [error, setError] = useState("");
 
-  const handleDownload = () => {
-    if (!url) {
-      alert("Veuillez entrer une URL YouTube valide");
-      return;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ videoUrl, quality }),
+      });
+
+      const data = await response.json();
+
+      if (data.downloadLink) {
+        setDownloadLink(data.downloadLink);
+        setError("");
+      } else {
+        setError("Failed to fetch video. Please check the URL and try again.");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again.");
     }
-    setLoading(true);
-    window.location.href = `/api/route?url=${encodeURIComponent(
-      url
-    )}&quality=${quality}`;
-    setLoading(false);
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Téléchargeur de vidéos YouTube</h1>
-      <input
-        type="text"
-        placeholder="Collez le lien YouTube ici"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-        style={{ width: "300px", padding: "10px", marginRight: "10px" }}
-      />
-      <select
-        value={quality}
-        onChange={(e) => setQuality(e.target.value)}
-        style={{ padding: "10px" }}
-      >
-        <option value="highest">Meilleure qualité</option>
-        <option value="lowest">Qualité la plus basse</option>
-        <option value="144p">144p</option>
-        <option value="240p">240p</option>
-        <option value="360p">360p</option>
-        <option value="480p">480p</option>
-        <option value="720p">720p</option>
-        <option value="1080p">1080p</option>
-      </select>
-      <button
-        onClick={handleDownload}
-        disabled={loading}
-        style={{
-          padding: "10px 20px",
-          backgroundColor: "#0070f3",
-          color: "#fff",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
-        {loading ? "Téléchargement..." : "Télécharger"}
-      </button>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
+          YouTube Video Downloader
+        </h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label
+              htmlFor="videoUrl"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Enter YouTube Video URL:
+            </label>
+            <input
+              type="text"
+              id="videoUrl"
+              value={videoUrl}
+              onChange={(e) => setVideoUrl(e.target.value)}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="quality"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Select Quality:
+            </label>
+            <select
+              id="quality"
+              value={quality}
+              onChange={(e) => setQuality(e.target.value)}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="144p">144p</option>
+              <option value="360p">360p</option>
+              <option value="720p">720p</option>
+              <option value="1080p">1080p</option>
+            </select>
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Download
+          </button>
+        </form>
+
+        {downloadLink && (
+          <div className="mt-6 text-center">
+            <h2 className="text-lg font-semibold text-gray-800">
+              Download Ready!
+            </h2>
+            <a
+              href={downloadLink}
+              download
+              className="inline-block mt-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+            >
+              Click here to download
+            </a>
+          </div>
+        )}
+
+        {error && (
+          <div className="mt-6 text-center">
+            <p className="text-red-600">{error}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

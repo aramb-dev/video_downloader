@@ -34,31 +34,33 @@ cd votre-repo
 
 2. **Installer les dépendances**
 
-   Utilisez npm ou yarn pour installer les dépendances du projet.
+   Utilisez `npm` ou `yarn` pour installer les dépendances du projet.
 
-```bash
+````bash
 npm install
-```
 
 # ou
 
 ```bash
 yarn install
-```
+````
 
 3. **Installer yt-dlp**
-   Assurez-vous que yt-dlp est installé sur votre système. Vous pouvez l'installer via pip ou télécharger le binaire directement.
+   Assurez-vous que `yt-dlp` est installé sur votre système. Vous pouvez l'installer via pip ou télécharger le binaire directement.
 
 ```bash
 pip install yt-dlp
 ```
-Ou téléchargez-le depuis yt-dlp GitHub.
+
+Ou téléchargez-le depuis [yt-dlp GitHub](https://github.com/yt-dlp/yt-dlp).
 
 4. **Configurer l'environnement**
-   Créez un fichier .env à la racine du projet pour configurer les variables d'environnement si nécessaire.
+   Créez un fichier `.env` à la racine du projet pour configurer les variables d'environnement si nécessaire.
+
 ```bash
 touch .env
 ```
+
 Pour l'instant, aucune variable d'environnement n'est requise, mais vous pouvez en ajouter si vous en avez besoin plus tard.
 
 ---
@@ -66,11 +68,36 @@ Pour l'instant, aucune variable d'environnement n'est requise, mais vous pouvez 
 ## Utilisation
 
 1. **Démarrer le serveur de développement**
-Pour lancer l'application en mode développement, exécutez la commande suivante :
+   Pour lancer l'application en mode développement, exécutez la commande suivante :
+
 ```bash
 npm run dev
 # ou
 yarn dev
 ```
-Pour l'instant, aucune variable d'environnement n'est requise, mais vous pouvez en ajouter si vous en avez besoin plus tard.
 
+L'application sera accessible à l'adresse : [http://localhost:3000](http://localhost:3000).
+
+2. **Utiliser l'application**
+
+- Entrez l'URL de la vidéo YouTube dans le champ prévu.
+
+- Sélectionnez la qualité souhaitée.
+
+- Cliquez sur Download pour lancer le téléchargement.
+
+Le téléchargement commencera automatiquement après la soumission du formulaire.
+
+## Structure du projet
+
+- `/pages` : Contient les pages Next.js.
+
+  - `index.js` : Page d'accueil avec le formulaire de téléchargement.
+
+  - `api` : Dossier contenant l'API pour gérer les requêtes de téléchargement.
+
+- `/public` : Contient les fichiers statiques (images, styles, etc.).
+
+- `/styles` : Contient les fichiers CSS ou Tailwind (si utilisé).
+
+- `package.json` : Liste des dépendances et scripts du projet.

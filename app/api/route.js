@@ -50,7 +50,7 @@ export async function POST(req) {
         }
 
         // Si le format est disponible, continuer avec le téléchargement
-        const command = `yt-dlp -f "${quality || "best"}" --get-url "${videoUrl}"`;
+        const command = `yt-dlp -f "best" --get-url "${videoUrl}"`;
 
         exec(command, (error, stdout, stderr) => {
           if (error) {
@@ -73,9 +73,9 @@ export async function POST(req) {
 
           console.log("URL de téléchargement générée :", downloadUrl);
 
-          // Réponse pour télécharger le fichier
+          // Retourne le lien de téléchargement dans la réponse JSON
           return resolve(
-            NextResponse.redirect(downloadUrl, 302) // Redirection vers le lien de téléchargement
+            NextResponse.json({ downloadLink: downloadUrl }, { status: 200 })
           );
         });
       });

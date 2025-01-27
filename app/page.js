@@ -4,7 +4,6 @@ import { useState } from "react";
 export default function Home() {
   const [videoUrl, setVideoUrl] = useState("");
   const [quality, setQuality] = useState("360p");
-  const [downloadLink, setDownloadLink] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
@@ -22,8 +21,15 @@ export default function Home() {
       const data = await response.json();
 
       if (data.downloadLink) {
-        setDownloadLink(data.downloadLink);
         setError("");
+
+        // Créer un élément <a> invisible pour déclencher le téléchargement
+        const link = document.createElement("a");
+        link.href = data.downloadLink;
+        link.setAttribute("download", "video.mp4"); // Nom du fichier à télécharger
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       } else {
         setError("Failed to fetch video. Please check the URL and try again.");
       }
@@ -81,21 +87,6 @@ export default function Home() {
             Download
           </button>
         </form>
-
-        {downloadLink && (
-          <div className="mt-6 text-center">
-            <h2 className="text-lg font-semibold text-gray-800">
-              Download Ready!
-            </h2>
-            <a
-              href={downloadLink}
-              download
-              className="inline-block mt-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
-            >
-              Click here to download
-            </a>
-          </div>
-        )}
 
         {error && (
           <div className="mt-6 text-center">

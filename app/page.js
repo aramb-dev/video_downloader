@@ -1,13 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [videoUrl, setVideoUrl] = useState("");
   const [quality, setQuality] = useState("360p");
   const [error, setError] = useState("");
+  const [data, setData] = useState({});//pour la gestion des données plus facilement
+  const [loading, setLoading] = useState(false); //Ajout de loading pour le chargement
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setLoading(true);
 
     try {
       const response = await fetch("/api", {
@@ -18,25 +22,32 @@ export default function Home() {
         body: JSON.stringify({ videoUrl, quality }),
       });
 
-      const data = await response.json();
-
-      if (data.downloadLink) {
-        setError("");
-
-        // Créer un élément <a> invisible pour déclencher le téléchargement
-        const link = document.createElement("a");
-        link.href = data.downloadLink;
-        link.setAttribute("download", "video.mp4"); // Nom du fichier à télécharger
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } else {
-        setError("Failed to fetch video. Please check the URL and try again.");
+      const responseData = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(responseData.error || "Une erreur s'est produite");
       }
+
+      setData(responseData);
     } catch (err) {
-      setError("An error occurred. Please try again.");
+      setError(err.message || "Une erreur s'est produite. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
     }
   };
+
+  // Effet pour déclencher le téléchargement automatique
+  useEffect(() => {
+    if (data.downloadLink) {
+      const link = document.createElement("a");
+      link.href = data.downloadLink;
+      link.setAttribute("download", "video.mp4");
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }, [data.downloadLink]);
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
@@ -44,6 +55,7 @@ export default function Home() {
         <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
           YouTube Video Downloader
         </h1>
+        
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
@@ -59,8 +71,10 @@ export default function Home() {
               onChange={(e) => setVideoUrl(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
+              disabled={loading}
             />
           </div>
+          
           <div>
             <label
               htmlFor="quality"
@@ -73,6 +87,7 @@ export default function Home() {
               value={quality}
               onChange={(e) => setQuality(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              disabled={loading}
             >
               <option value="144p">144p</option>
               <option value="360p">360p</option>
@@ -80,17 +95,25 @@ export default function Home() {
               <option value="1080p">1080p</option>
             </select>
           </div>
+          
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            disabled={loading}
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Download
+            {loading ? "Téléchargement..." : "Download"}
           </button>
         </form>
 
         {error && (
           <div className="mt-6 text-center">
             <p className="text-red-600">{error}</p>
+          </div>
+        )}
+
+        {data.downloadLink && (
+          <div className="mt-6 text-center">
+            <p className="text-green-600">Téléchargement démarré !</p>
           </div>
         )}
       </div>

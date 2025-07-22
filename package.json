@@ -1,6 +1,7 @@
 {
-  "name": "deepseek",
+  "name": "youtube-video-downloader",
   "version": "0.1.0",
+  "description": "A Next.js web application for downloading YouTube videos in different qualities using yt-dlp and ytdl-core",
   "private": true,
   "scripts": {
     "dev": "next dev",

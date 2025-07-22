@@ -27,8 +27,8 @@ Before you begin, make sure you have the following installed on your machine:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-user/your-repo.git
-cd your-repo
+git clone https://github.com/Dayifour/video_downloader.git
+cd video_downloader
 
 ```
 
@@ -89,25 +89,27 @@ The download will start automatically after submitting the form.
 
 ## Project structure
 
-- `/pages`: Contains the Next.js pages.
+- `/app`: Contains the Next.js App Router pages and components.
 
-- `index.js`: Home page with the download form.
+- `page.js`: Home page with the download form.
 
-- `api`: Folder containing the API to manage download requests.
+- `layout.js`: Root layout component.
 
-- `/public` : Contains static files (images, styles, etc.).
+- `globals.css`: Global styles including Tailwind CSS.
 
-- `/styles` : Contains CSS or Tailwind files (if used).
+- `/app/api`: Folder containing the API routes to manage download requests.
+
+- `/public` : Contains static files (images, icons, etc.).
 
 - `package.json` : List of project dependencies and scripts.
 
 ## Dependencies
 
-`Next.js` : React framework for server-side rendering and static site generation.
-
-`yt-dlp` : Command-line tool to download YouTube videos.
-
-`Tailwind CSS` (optional): CSS framework to style the user interface.
+- `Next.js` : React framework for server-side rendering and static site generation.
+- `React` : JavaScript library for building user interfaces.
+- `ytdl-core` : JavaScript library to download YouTube videos.
+- `Tailwind CSS` : Utility-first CSS framework for styling the user interface.
+- `yt-dlp` : Command-line tool to download YouTube videos (external dependency).
 
 ## Contribute
 
@@ -129,4 +131,4 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ## Author
 
-- Sékou Dayifourou KEITA - [Dayifour](https://github.com/dayifour)
+- Sékou Dayifourou KEITA - [Dayifour](https://github.com/Dayifour)
